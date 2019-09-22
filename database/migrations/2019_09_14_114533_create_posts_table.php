@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('post_type');
             $table->bigInteger('author_id');
             $table->bigInteger('category_id');
-            $table->json('meta_data')->nullable();
+            $table->text('meta_data')->nullable();
             $table->timestamps();
         });
     }
