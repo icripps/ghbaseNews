@@ -20,7 +20,7 @@ class PostApiController extends Controller
 
     public function index()
     {
-        $posts = Post::with(['author', 'images', 'videos', 'category', 'tags'])->paginate();
+        $posts = Post::with(['author', 'images', 'videos', 'category', 'tags']);
 
         return PostResource::collection($posts);
     }
