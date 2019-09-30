@@ -29,9 +29,9 @@ class CategoryApiController extends Controller
 
     public function posts($id)
     {
-        $posts = Category::find($id)->posts();
+        $category = Category::find($id)->posts()->paginate();
         // $posts = $category->posts;
-        return PostResource::collection($posts);
+        return PostResource::collection($category);
     }
 
     public function show($id)
